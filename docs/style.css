@@ -3,14 +3,17 @@
    --------------------------------------------------------------- */
 
 :root {
-  --bg: #fbfbfa;
-  --surface: #ffffff;
-  --text: #141414;
-  --muted: #6c6c66;
-  --faint: #9a9a93;
-  --line: #e5e4df;
-  --line-soft: #eeeeea;
-  --accent: #2f4cdd;
+  color-scheme: dark;
+
+  --bg: #050914;
+  --surface: #0c1424;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --faint: #7c8ba3;
+  --line: #1e293b;
+  --line-soft: #162032;
+  --accent: #22d3ee;
+  --accent-dim: rgba(34, 211, 238, 0.4);
 
   --wrap: 1120px;
   --gutter: clamp(20px, 5vw, 44px);
@@ -80,18 +83,9 @@ a:focus-visible {
 }
 
 .wordmark-glyph {
-  width: 13px;
-  height: 13px;
-  border: 1.5px solid var(--text);
-  border-radius: 50%;
-  position: relative;
-}
-
-.wordmark-glyph::after {
-  content: "";
-  position: absolute;
-  inset: 3.5px;
-  background: var(--text);
+  width: 14px;
+  height: 14px;
+  border: 2.5px solid var(--accent);
   border-radius: 50%;
 }
 
@@ -198,7 +192,7 @@ h1 {
   position: absolute;
   inset: 3px;
   border-radius: 50%;
-  background: var(--text);
+  background: var(--muted);
 }
 
 .camera-lens::before {
@@ -230,7 +224,6 @@ h1 {
   border: 1px solid var(--line);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 1px 2px rgba(20, 20, 20, 0.03);
 }
 
 /* Abstract calibration targets */
@@ -259,13 +252,13 @@ h1 {
 .targets span::before {
   width: 4px;
   height: 4px;
-  background: #dbdad4;
+  background: #33445e;
 }
 
 .targets span::after {
   width: 15px;
   height: 15px;
-  border: 1px solid var(--line-soft);
+  border: 1px solid #1c2942;
 }
 
 .gaze {
@@ -295,7 +288,7 @@ h1 {
 .gaze-ring {
   width: 34px;
   height: 34px;
-  border: 1px solid rgba(47, 76, 221, 0.45);
+  border: 1px solid var(--accent-dim);
 }
 
 .gaze-dot {
