@@ -66,7 +66,6 @@ a:focus-visible {
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   height: 68px;
 }
 
@@ -95,15 +94,6 @@ a:focus-visible {
   background: var(--text);
   border-radius: 50%;
 }
-
-.header-link {
-  font-size: 0.875rem;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.15s ease;
-}
-
-.header-link:hover { color: var(--text); }
 
 /* --- Hero ------------------------------------------------------ */
 
@@ -438,19 +428,10 @@ h1 {
 .footer-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
   padding-block: 30px;
   font-size: 0.8125rem;
   color: var(--muted);
 }
-
-.footer-inner a {
-  text-decoration: none;
-  transition: color 0.15s ease;
-}
-
-.footer-inner a:hover { color: var(--text); }
 
 /* --- Responsive --------------------------------------------------- */
 
