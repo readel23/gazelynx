@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenGaze — Camera-based Eye Tracking</title>
+<meta name="description" content="OpenGaze is camera-based eye-tracking software that estimates where a user is looking using a standard webcam.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#fbfbfa">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenGaze — Camera-based Eye Tracking">
+<meta property="og:description" content="OpenGaze is camera-based eye-tracking software that estimates where a user is looking using a standard webcam.">
+<meta property="og:site_name" content="OpenGaze">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141414'/%3E%3Ccircle cx='16' cy='16' r='7.5' fill='none' stroke='%23fbfbfa' stroke-width='1.6'/%3E%3Ccircle cx='16' cy='16' r='2.6' fill='%23fbfbfa'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="./" aria-label="OpenGaze home">
+      <span class="wordmark-glyph" aria-hidden="true"></span>
+      OpenGaze
+    </a>
+    <a class="header-link" href="https://github.com/readel23/opengaze" rel="noopener">GitHub</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero wrap">
+    <p class="eyebrow">Currently in development</p>
+    <h1>OpenGaze</h1>
+    <p class="lede">Eye tracking. Nothing extra.</p>
+    <p class="sub">Camera-based eye tracking using a standard webcam.</p>
+  </section>
+
+  <section class="wrap statement">
+    <p>
+      OpenGaze estimates where a user is looking on a computer screen using an
+      ordinary RGB webcam, without requiring dedicated eye-tracking hardware.
+    </p>
+  </section>
+
+  <section class="wrap demo-section" aria-labelledby="demo-caption">
+    <figure class="demo">
+      <div class="scene" id="scene">
+
+        <div class="camera" aria-hidden="true">
+          <span class="camera-lens"></span>
+          <span class="camera-label">webcam</span>
+        </div>
+
+        <div class="screen" id="screen" aria-hidden="true">
+          <div class="targets">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+          <div class="gaze" id="gaze">
+            <span class="gaze-ring"></span>
+            <span class="gaze-dot"></span>
+            <span class="gaze-label">gaze estimate</span>
+          </div>
+        </div>
+
+        <div class="stand" aria-hidden="true"></div>
+      </div>
+      <figcaption id="demo-caption">
+        Abstract illustration of the concept — not real measurement data.
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="wrap principles" aria-label="Core idea">
+    <ul class="principle-list">
+      <li>
+        <span class="num">01</span>
+        <h2>Standard webcam</h2>
+        <p>Built around the RGB camera a computer already has.</p>
+      </li>
+      <li>
+        <span class="num">02</span>
+        <h2>Software-based</h2>
+        <p>No dedicated eye-tracking hardware in the setup.</p>
+      </li>
+      <li>
+        <span class="num">03</span>
+        <h2>Real-time gaze estimation</h2>
+        <p>Gaze is estimated continuously from the camera stream.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="wrap status" aria-labelledby="status-title">
+    <div class="status-grid">
+      <div class="status-main">
+        <h2 id="status-title">Currently in development</h2>
+        <p>
+          OpenGaze is an active research and engineering effort. The system is
+          being built and evaluated, and its behaviour is still changing as the
+          work continues.
+        </p>
+      </div>
+      <div class="status-aside">
+        <p class="aside-title">Possible directions</p>
+        <ul class="directions">
+          <li>Accessibility</li>
+          <li>Human–computer interaction</li>
+          <li>Research</li>
+          <li>Interface analytics</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>© 2026 OpenGaze</p>
+    <a href="https://github.com/readel23/opengaze" rel="noopener">GitHub</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

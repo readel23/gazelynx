@@ -1,0 +1,474 @@
+/* ---------------------------------------------------------------
+   OpenGaze — landing page
+   --------------------------------------------------------------- */
+
+:root {
+  --bg: #fbfbfa;
+  --surface: #ffffff;
+  --text: #141414;
+  --muted: #6c6c66;
+  --faint: #9a9a93;
+  --line: #e5e4df;
+  --line-soft: #eeeeea;
+  --accent: #2f4cdd;
+
+  --wrap: 1080px;
+  --gutter: clamp(20px, 5vw, 40px);
+
+  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas,
+          "Liberation Mono", monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: -0.006em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2 { font-weight: 500; letter-spacing: -0.025em; margin: 0; }
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+a { color: inherit; }
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* --- Header ---------------------------------------------------- */
+
+.site-header {
+  border-bottom: 1px solid var(--line-soft);
+  background: var(--bg);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  text-decoration: none;
+}
+
+.wordmark-glyph {
+  width: 13px;
+  height: 13px;
+  border: 1.5px solid var(--text);
+  border-radius: 50%;
+  position: relative;
+}
+
+.wordmark-glyph::after {
+  content: "";
+  position: absolute;
+  inset: 3.5px;
+  background: var(--text);
+  border-radius: 50%;
+}
+
+.header-link {
+  font-size: 0.875rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.header-link:hover { color: var(--text); }
+
+/* --- Hero ------------------------------------------------------ */
+
+.hero {
+  padding-top: clamp(72px, 13vw, 150px);
+  padding-bottom: clamp(40px, 7vw, 72px);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: clamp(26px, 5vw, 40px);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+h1 {
+  font-size: clamp(3rem, 9vw, 5.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.042em;
+  margin-bottom: clamp(20px, 3.5vw, 30px);
+}
+
+.lede {
+  font-size: clamp(1.3rem, 3.2vw, 1.75rem);
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+  max-width: 30ch;
+  text-wrap: balance;
+}
+
+.sub {
+  margin-top: 14px;
+  font-size: clamp(1rem, 2.2vw, 1.1rem);
+  color: var(--muted);
+  max-width: 52ch;
+  text-wrap: pretty;
+}
+
+/* --- Statement -------------------------------------------------- */
+
+.statement {
+  padding-bottom: clamp(56px, 9vw, 100px);
+}
+
+.statement p {
+  max-width: 60ch;
+  font-size: clamp(1rem, 2vw, 1.0625rem);
+  color: var(--muted);
+  border-left: 1px solid var(--line);
+  padding-left: clamp(18px, 3vw, 28px);
+}
+
+/* --- Demo ------------------------------------------------------- */
+
+.demo-section { padding-bottom: clamp(64px, 10vw, 116px); }
+
+.demo {
+  margin: 0 auto;
+  max-width: 840px;
+}
+
+.scene {
+  position: relative;
+  padding-top: 46px;
+}
+
+.camera {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+.camera-lens {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  position: relative;
+}
+
+.camera-lens::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--text);
+}
+
+.camera-lens::before {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  animation: cam-pulse 3.6s ease-out infinite;
+}
+
+@keyframes cam-pulse {
+  0%   { transform: scale(0.75); opacity: 0; }
+  35%  { opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.camera-label {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  color: var(--faint);
+}
+
+.screen {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(20, 20, 20, 0.03);
+}
+
+/* Abstract calibration targets */
+.targets {
+  position: absolute;
+  inset: 14%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.targets span {
+  position: relative;
+}
+
+.targets span::before,
+.targets span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.targets span::before {
+  width: 4px;
+  height: 4px;
+  background: #dbdad4;
+}
+
+.targets span::after {
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--line-soft);
+}
+
+.gaze {
+  position: absolute;
+  left: var(--gx, 50%);
+  top: var(--gy, 50%);
+  width: 0;
+  height: 0;
+  animation: gaze-path 14s cubic-bezier(0.6, 0, 0.2, 1) infinite;
+}
+
+.scene.is-tracking .gaze {
+  animation: none;
+  transition: left 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              top 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gaze-ring,
+.gaze-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.gaze-ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(47, 76, 221, 0.45);
+}
+
+.gaze-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+}
+
+.gaze-label {
+  position: absolute;
+  left: 26px;
+  top: -8px;
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  color: var(--faint);
+}
+
+@keyframes gaze-path {
+  0%,  11%  { left: 26%; top: 26%; }
+  20%, 31%  { left: 74%; top: 26%; }
+  40%, 51%  { left: 50%; top: 50%; }
+  60%, 71%  { left: 26%; top: 74%; }
+  80%, 91%  { left: 74%; top: 74%; }
+  100%      { left: 26%; top: 26%; }
+}
+
+.stand {
+  width: 78px;
+  height: 1px;
+  margin: 22px auto 0;
+  background: var(--line);
+}
+
+.demo figcaption {
+  margin-top: 22px;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  color: var(--faint);
+}
+
+/* --- Principles -------------------------------------------------- */
+
+.principles {
+  padding-block: clamp(8px, 2vw, 16px) clamp(64px, 10vw, 116px);
+}
+
+.principle-list {
+  border-top: 1px solid var(--line);
+}
+
+.principle-list li {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  align-items: start;
+  padding-block: clamp(26px, 4vw, 36px);
+  border-bottom: 1px solid var(--line);
+}
+
+.num {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--faint);
+  padding-top: 0.45em;
+}
+
+.principle-list h2 {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: clamp(1.0625rem, 2.4vw, 1.25rem);
+  margin-bottom: 6px;
+}
+
+.principle-list p {
+  grid-column: 2;
+  grid-row: 2;
+  color: var(--muted);
+  max-width: 46ch;
+}
+
+/* --- Status ------------------------------------------------------ */
+
+.status { padding-bottom: clamp(72px, 11vw, 130px); }
+
+.status-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 72px);
+  align-items: start;
+}
+
+.status h2 {
+  font-size: clamp(1.5rem, 3.4vw, 2rem);
+  margin-bottom: 18px;
+}
+
+.status-main p {
+  color: var(--muted);
+  max-width: 52ch;
+}
+
+.aside-title {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--faint);
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.directions li {
+  padding-block: 12px;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 0.9375rem;
+}
+
+/* --- Footer ------------------------------------------------------ */
+
+.site-footer {
+  border-top: 1px solid var(--line-soft);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 30px;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.footer-inner a {
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footer-inner a:hover { color: var(--text); }
+
+/* --- Responsive --------------------------------------------------- */
+
+@media (max-width: 720px) {
+  .status-grid { grid-template-columns: minmax(0, 1fr); }
+  .principle-list li { grid-template-columns: 40px minmax(0, 1fr); }
+  .gaze-ring { width: 26px; height: 26px; }
+  .gaze-label { left: 22px; }
+}
+
+@media (max-width: 520px) {
+  .gaze-label { display: none; }
+  .targets { inset: 16%; }
+  .targets span::after { width: 12px; height: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gaze { animation: none; left: 62%; top: 38%; }
+  .camera-lens::before { animation: none; opacity: 0; }
+  .scene.is-tracking .gaze { transition: none; }
+}
