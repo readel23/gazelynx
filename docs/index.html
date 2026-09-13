@@ -74,44 +74,159 @@
     </figure>
   </section>
 
-  <section class="wrap principles" aria-label="Core idea">
-    <ul class="principle-list">
-      <li>
-        <span class="num">01</span>
-        <h2>Standard webcam</h2>
-        <p>Built around the RGB camera a computer already has.</p>
-      </li>
-      <li>
-        <span class="num">02</span>
-        <h2>Software-based</h2>
-        <p>No dedicated eye-tracking hardware in the setup.</p>
-      </li>
-      <li>
-        <span class="num">03</span>
-        <h2>Real-time gaze estimation</h2>
-        <p>Gaze is estimated continuously from the camera stream.</p>
-      </li>
-    </ul>
+  <section class="section" aria-labelledby="idea-title">
+    <div class="wrap section-grid">
+      <div class="section-head">
+        <h2 class="section-title" id="idea-title">Core idea</h2>
+      </div>
+      <div class="section-body">
+        <ul class="rows">
+          <li>
+            <h3>Standard webcam</h3>
+            <p>Built around the RGB camera a computer already has.</p>
+          </li>
+          <li>
+            <h3>Software-based</h3>
+            <p>No dedicated eye-tracking hardware in the setup.</p>
+          </li>
+          <li>
+            <h3>Real-time gaze estimation</h3>
+            <p>Gaze is estimated continuously from the camera stream.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
   </section>
 
-  <section class="wrap status" aria-labelledby="status-title">
-    <div class="status-grid">
-      <div class="status-main">
-        <h2 id="status-title">Currently in development</h2>
-        <p>
+  <section class="section" aria-labelledby="process-title">
+    <div class="wrap section-grid">
+      <div class="section-head">
+        <h2 class="section-title" id="process-title">How it works</h2>
+      </div>
+      <div class="section-body">
+        <ol class="steps">
+          <li>
+            <span class="num">01</span>
+            <div>
+              <h3>Set up</h3>
+              <p>
+                OpenGaze works with the webcam already attached to the computer
+                and the monitor that camera is pointed at.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="num">02</span>
+            <div>
+              <h3>Calibrate</h3>
+              <p>
+                A short guided calibration adapts the system to the person
+                sitting in front of the screen and to their setup.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="num">03</span>
+            <div>
+              <h3>Track</h3>
+              <p>
+                The estimated gaze point then follows the screen continuously,
+                with an optional marker drawn on top of the desktop.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="num">04</span>
+            <div>
+              <h3>Review</h3>
+              <p>
+                Gaze can also be recorded locally and looked at afterwards
+                instead of being watched live.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="approach-title">
+    <div class="wrap section-grid">
+      <div class="section-head">
+        <h2 class="section-title" id="approach-title">Approach</h2>
+      </div>
+      <div class="section-body">
+        <div class="cards">
+          <article>
+            <h3>Local by design</h3>
+            <p>
+              Everything runs on the computer in front of the user. The camera
+              is opened only when tracking is explicitly started, and no video
+              leaves the machine.
+            </p>
+          </article>
+          <article>
+            <h3>Measured, not claimed</h3>
+            <p>
+              Accuracy depends on the camera, the lighting, the display and the
+              person. Instead of advertising one universal number, OpenGaze
+              checks a calibration against targets it has not seen and reports
+              what it measured there.
+            </p>
+          </article>
+          <article>
+            <h3>Deliberately narrow</h3>
+            <p>
+              One person, one monitor, one camera. The scope is kept small so
+              that the core problem can be solved properly before anything is
+              built on top of it.
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="directions-title">
+    <div class="wrap section-grid">
+      <div class="section-head">
+        <h2 class="section-title" id="directions-title">Possible directions</h2>
+      </div>
+      <div class="section-body">
+        <ul class="rows rows-tight">
+          <li>
+            <h3>Accessibility</h3>
+            <p>Interaction that does not depend on using a hand.</p>
+          </li>
+          <li>
+            <h3>Human–computer interaction</h3>
+            <p>Interfaces that can take attention into account.</p>
+          </li>
+          <li>
+            <h3>Research</h3>
+            <p>Gaze data in settings without dedicated equipment.</p>
+          </li>
+          <li>
+            <h3>Interface analytics</h3>
+            <p>Understanding which parts of a screen are actually looked at.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section status" aria-labelledby="status-title">
+    <div class="wrap section-grid">
+      <div class="section-head">
+        <h2 class="section-title" id="status-title">Status</h2>
+      </div>
+      <div class="section-body">
+        <p class="status-headline">Currently in development</p>
+        <p class="status-text">
           OpenGaze is an active research and engineering effort. The system is
           being built and evaluated, and its behaviour is still changing as the
-          work continues.
+          work continues. There is no public release yet.
         </p>
-      </div>
-      <div class="status-aside">
-        <p class="aside-title">Possible directions</p>
-        <ul class="directions">
-          <li>Accessibility</li>
-          <li>Human–computer interaction</li>
-          <li>Research</li>
-          <li>Interface analytics</li>
-        </ul>
       </div>
     </div>
   </section>
